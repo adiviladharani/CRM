@@ -1,0 +1,159 @@
+{
+  "appConfig": {
+    "name": "CRM Portal",
+    "version": "1.0.0"
+  },
+  "navigation": [
+    {
+      "id": "dashboard",
+      "label": "Dashboard",
+      "path": "/dashboard",
+      "icon": "dashboard"
+    },
+    {
+      "id": "leads",
+      "label": "Leads",
+      "path": "/leads",
+      "icon": "leads"
+    },
+    {
+      "id": "customers",
+      "label": "Customers",
+      "path": "/customers",
+      "icon": "customers"
+    }
+  ],
+  "dashboardCards": [
+    {
+      "id": "total-leads",
+      "label": "Total Leads",
+      "resource": "leads",
+      "calculation": "count"
+    },
+    {
+      "id": "qualified-leads",
+      "label": "Qualified Leads",
+      "resource": "leads",
+      "calculation": "filter-count",
+      "field": "status",
+      "value": "qualified"
+    },
+    {
+      "id": "converted-leads",
+      "label": "Converted Leads",
+      "resource": "leads",
+      "calculation": "filter-count",
+      "field": "status",
+      "value": "converted"
+    },
+    {
+      "id": "total-customers",
+      "label": "Total Customers",
+      "resource": "customers",
+      "calculation": "count"
+    }
+  ],
+  "leadStatuses": [
+    {
+      "id": "new",
+      "label": "New"
+    },
+    {
+      "id": "contacted",
+      "label": "Contacted"
+    },
+    {
+      "id": "qualified",
+      "label": "Qualified"
+    },
+    {
+      "id": "converted",
+      "label": "Converted"
+    },
+    {
+      "id": "lost",
+      "label": "Lost"
+    }
+  ],
+  "leadSources": [
+    {
+      "id": "website",
+      "label": "Website"
+    },
+    {
+      "id": "referral",
+      "label": "Referral"
+    },
+    {
+      "id": "social-media",
+      "label": "Social Media"
+    },
+    {
+      "id": "email",
+      "label": "Email"
+    },
+    {
+      "id": "other",
+      "label": "Other"
+    }
+  ],
+  "customerTypes": [
+    {
+      "id": "individual",
+      "label": "Individual"
+    },
+    {
+      "id": "business",
+      "label": "Business"
+    }
+  ],
+  "users": [
+    {
+      "name": "Dharani Nikhil",
+      "email": "nikhil@gmail.com",
+      "password": "Nikhil123",
+      "id": "o9pImnNOtUE"
+    }
+  ],
+  "leads": [
+    {
+      "name": "Pranith",
+      "company": "KITSAC",
+      "email": "pranith@kitsac.com",
+      "phone": "9876567834",
+      "source": "email",
+      "status": "converted",
+      "id": "_JHALYPQyTM",
+      "convertedCustomerId": "EQlp5SHWeAg"
+    },
+    {
+      "name": "Gopi",
+      "company": "Developtrees",
+      "email": "gopi@gmail.com",
+      "phone": "7653256789",
+      "source": "website",
+      "status": "qualified",
+      "id": "U__amnkGKnY"
+    }
+  ],
+  "customers": [
+    {
+      "name": "Akshay",
+      "company": "LORA",
+      "email": "info@lora.com",
+      "phone": "8877656789",
+      "type": "business",
+      "id": "3KaW-l2VmEI"
+    },
+    {
+      "name": "Pranith",
+      "company": "KITSAC",
+      "email": "pranith@kitsac.com",
+      "phone": "9876567834",
+      "type": "business",
+      "convertedFromLeadId": "_JHALYPQyTM",
+      "id": "EQlp5SHWeAg"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
