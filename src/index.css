@@ -51,10 +51,12 @@ button:disabled {
 }
 
 .form-group input,
-.form-group select {
+.form-group select,
+.form-group textarea {
   padding: 11px;
   border: 1px solid #d1d5db;
   border-radius: 6px;
+  font: inherit;
 }
 
 .dashboard-layout {
@@ -110,7 +112,7 @@ button:disabled {
 .cards {
   display: grid;
   grid-template-columns:
-    repeat(4, 1fr);
+    repeat(auto-fit, minmax(180px, 1fr));
   gap: 20px;
 }
 

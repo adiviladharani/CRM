@@ -105,12 +105,22 @@ function DynamicForm({
                 </option>
               ))}
             </select>
+          ) : field.type === "textarea" ? (
+            <textarea
+              name={field.name}
+              value={
+                form[field.name] ?? ""
+              }
+              onChange={handleChange}
+              required={field.required}
+              rows={4}
+            />
           ) : (
             <input
               type={field.type}
               name={field.name}
               value={
-                form[field.name] || ""
+                form[field.name] ?? ""
               }
               onChange={handleChange}
               required={field.required}

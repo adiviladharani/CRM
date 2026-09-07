@@ -17,20 +17,23 @@ function Dashboard() {
         const [
           cardsData,
           leads,
-          customers
+          customers,
+          inventory
         ] = await Promise.all([
           api.get(
             "dashboardCards"
           ),
           api.get("leads"),
-          api.get("customers")
+          api.get("customers"),
+          api.get("inventory")
         ]);
 
         setCards(cardsData);
 
         setData({
           leads,
-          customers
+          customers,
+          inventory
         });
       } catch (error) {
         console.error(error);

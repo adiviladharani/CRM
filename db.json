@@ -21,6 +21,12 @@
       "label": "Customers",
       "path": "/customers",
       "icon": "customers"
+    },
+    {
+      "id": "inventory",
+      "label": "Inventory",
+      "path": "/inventory",
+      "icon": "inventory"
     }
   ],
   "dashboardCards": [
@@ -51,6 +57,20 @@
       "label": "Total Customers",
       "resource": "customers",
       "calculation": "count"
+    },
+    {
+      "id": "total-inventory",
+      "label": "Inventory Items",
+      "resource": "inventory",
+      "calculation": "count"
+    },
+    {
+      "id": "low-stock",
+      "label": "Low Stock",
+      "resource": "inventory",
+      "calculation": "filter-count",
+      "field": "status",
+      "value": "low-stock"
     }
   ],
   "leadStatuses": [
@@ -107,12 +127,54 @@
       "label": "Business"
     }
   ],
+  "inventoryCategories": [
+    {
+      "id": "electronics",
+      "label": "Electronics"
+    },
+    {
+      "id": "furniture",
+      "label": "Furniture"
+    },
+    {
+      "id": "office-supplies",
+      "label": "Office Supplies"
+    },
+    {
+      "id": "accessories",
+      "label": "Accessories"
+    },
+    {
+      "id": "other",
+      "label": "Other"
+    }
+  ],
+  "inventoryStatuses": [
+    {
+      "id": "in-stock",
+      "label": "In Stock"
+    },
+    {
+      "id": "low-stock",
+      "label": "Low Stock"
+    },
+    {
+      "id": "out-of-stock",
+      "label": "Out of Stock"
+    }
+  ],
   "users": [
     {
       "name": "Dharani Nikhil",
       "email": "nikhil@gmail.com",
       "password": "Nikhil123",
       "id": "o9pImnNOtUE"
+    },
+    {
+      "name": "Dinesh",
+      "email": "dinesh@gmail.com",
+      "password": "1234",
+      "id": "FPwVbVi9Nq8"
     }
   ],
   "leads": [
@@ -132,8 +194,19 @@
       "email": "gopi@gmail.com",
       "phone": "7653256789",
       "source": "website",
-      "status": "qualified",
-      "id": "U__amnkGKnY"
+      "status": "converted",
+      "id": "U__amnkGKnY",
+      "convertedCustomerId": "n3QvfbLd0aY"
+    },
+    {
+      "name": "Karthik",
+      "company": "FLORA",
+      "email": "info@gmail.com",
+      "phone": "7876567898",
+      "source": "other",
+      "status": "converted",
+      "id": "Sff4cO4oecI",
+      "convertedCustomerId": "tkBMgMK3NnM"
     }
   ],
   "customers": [
@@ -153,6 +226,78 @@
       "type": "business",
       "convertedFromLeadId": "_JHALYPQyTM",
       "id": "EQlp5SHWeAg"
+    },
+    {
+      "name": "Karthik",
+      "company": "FLORA",
+      "email": "info@gmail.com",
+      "phone": "7876567898",
+      "type": "business",
+      "convertedFromLeadId": "Sff4cO4oecI",
+      "id": "tkBMgMK3NnM"
+    },
+    {
+      "name": "Gopi",
+      "company": "Developtrees",
+      "email": "gopi@gmail.com",
+      "phone": "7653256789",
+      "type": "business",
+      "convertedFromLeadId": "U__amnkGKnY",
+      "id": "n3QvfbLd0aY"
+    }
+  ],
+  "inventory": [
+    {
+      "name": "Laptop Stand",
+      "sku": "SKU-LS-001",
+      "category": "electronics",
+      "quantity": 24,
+      "reorderLevel": 5,
+      "price": 2499,
+      "lastRestockDate": "2026-09-03",
+      "status": "in-stock",
+      "location": "Shelf A1",
+      "notes": "",
+      "id": "inv001"
+    },
+    {
+      "name": "Office Chair",
+      "sku": "SKU-OC-014",
+      "category": "furniture",
+      "quantity": 6,
+      "reorderLevel": 8,
+      "price": 7999,
+      "lastRestockDate": "2026-09-03",
+      "status": "low-stock",
+      "location": "Warehouse B",
+      "notes": "",
+      "id": "inv002"
+    },
+    {
+      "name": "Wireless Mouse",
+      "sku": "SKU-WM-203",
+      "category": "accessories",
+      "quantity": 0,
+      "reorderLevel": 10,
+      "price": 899,
+      "lastRestockDate": "2026-08-20",
+      "status": "out-of-stock",
+      "location": "Shelf B2",
+      "notes": "",
+      "id": "inv003"
+    },
+    {
+      "name": "A4 Copier Paper",
+      "sku": "SKU-PP-110",
+      "category": "office-supplies",
+      "quantity": 48,
+      "reorderLevel": 20,
+      "price": 349,
+      "lastRestockDate": "2026-09-01",
+      "status": "in-stock",
+      "location": "Store Room",
+      "notes": "",
+      "id": "inv004"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

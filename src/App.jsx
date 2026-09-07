@@ -11,6 +11,7 @@ import Dashboard from "./pages/Dashboard";
 
 import Leads from "./pages/leads/Leads";
 import Customers from "./pages/customers/Customers";
+import Inventory from "./pages/inventory/Inventory";
 
 import AuthLayout from "./layouts/AuthLayout";
 import DashboardLayout from "./layouts/DashboardLayout";
@@ -67,6 +68,13 @@ function App() {
             path="/customers"
             element={
               <Customers />
+            }
+          />
+
+          <Route
+            path="/inventory"
+            element={
+              <Inventory />
             }
           />
         </Route>
